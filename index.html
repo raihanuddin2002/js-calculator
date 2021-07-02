@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Calculator</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .main{
+            text-align: center;
+        }
+        .cal {
+            padding: 10px;
+            margin: 0px !important;
+            width: 320px;
+            border: 2px solid #ddd;
+            position: absolute;
+            left: 25%;
+            top: 70px;
+            height: 370px;
+            background: antiquewhite;
+            border-radius: 10px;
+            box-shadow: 0px 0px 4px #93ad93;
+        }
+        .input{
+            text-align: right;
+            padding-right: 5px;
+            font-size: 20px;
+            width: 78%;
+            height: 35px;
+            overflow: hidden;
+            box-shadow: 0px 0px 2px black;
+        }
+        button.button {
+            width: 15%;
+            padding: 8px;
+            font-size: 18px;
+            margin-bottom: 5px;
+            background: linear-gradient(to top, #2984c559, transparent);
+            box-shadow: 0px 25px 20px white;
+            border-top-left-radius: 5px;
+            border-bottom-right-radius: 5px;
+        }
+        .inputDiv {
+            margin-bottom: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+            <div class="cal">
+
+                    <div class="output" style="font-family: arial; color:rgb(117, 54, 54);;font-size:24px; text-align: right; padding: 30px 10% 25px 0px; ">Calculator</div>
+
+                    <div class="inputDiv">
+                        <input type="memo"  value="" class="input" placeholder="0">
+                    </div>
+                   
+                    <div class="fullBody">
+                        <button class="button seven">7</button>
+                        <button class="button eight">8</button>
+                        <button class="button nine">9</button>
+                        <button class="button divition">/</button>
+                        <button class="button power">^</button><br>
+                        <button class="button four">4</button>
+                        <button class="button five">5</button>
+                        <button class="button six">6</button>
+                        <button class="button gun">*</button>
+                        <button class="button root">√</button><br>
+                        <button class="button one">1</button>
+                        <button class="button two">2</button>
+                        <button class="button three">3</button>
+                        <button class="button minus">-</button>
+                        <button class="button plus">+</button><br>
+                        <button class="button zero">0</button>
+                        <button class="button dot">.</button>
+                        <button class="button clear">C</button>
+                        <button class="button clearAll">CA</button>
+                        <button class="button answer">=</button>
+                    </div>
+                </div>
+    </div>
+
+
+    <script>
+         var a = document.querySelector('.input').value;
+        
+       
+        document.querySelector('.seven').addEventListener('click', function(){
+            document.querySelector('.input').value+='7';
+        });
+
+        document.querySelector('.eight').addEventListener('click', function(){
+            document.querySelector('.input').value+='8';
+        });
+
+        document.querySelector('.nine').addEventListener('click', function(){
+            document.querySelector('.input').value+='9';
+        });
+        
+        document.querySelector('.divition').addEventListener('click', function(){
+            document.querySelector('.input').value +='/';
+        });
+
+    
+        document.querySelector('.power').addEventListener('click', function(){
+            document.querySelector('.input').value+='**';
+        });
+
+        document.querySelector('.four').addEventListener('click', function(){
+            document.querySelector('.input').value+='4';
+        });
+
+        document.querySelector('.five').addEventListener('click', function(){
+            document.querySelector('.input').value+='5';
+        });
+
+        document.querySelector('.six').addEventListener('click', function(){
+            document.querySelector('.input').value+='6';
+        });
+
+        document.querySelector('.gun').addEventListener('click', function(){
+            document.querySelector('.input').value+='*';
+        });
+
+        document.querySelector('.root').addEventListener('click', function(){
+            document.querySelector('.input').value=Math.sqrt(document.querySelector('.input').value);
+        });
+
+        document.querySelector('.one').addEventListener('click', function(){
+            document.querySelector('.input').value+='1';
+        });
+
+        document.querySelector('.two').addEventListener('click', function(){
+            document.querySelector('.input').value+='2';
+        });
+
+        document.querySelector('.three').addEventListener('click', function(){
+            document.querySelector('.input').value+='3';
+        });
+
+        document.querySelector('.minus').addEventListener('click', function(){
+            document.querySelector('.input').value+='-';
+        });
+
+        document.querySelector('.plus').addEventListener('click', function(){
+            document.querySelector('.input').value+='+';
+        });
+
+        document.querySelector('.zero').addEventListener('click', function(){
+            document.querySelector('.input').value+='0';
+        });
+
+        document.querySelector('.dot').addEventListener('click', function(){
+            document.querySelector('.input').value+='.';
+        });
+
+        document.querySelector('.clear').addEventListener('click', function(){
+            document.querySelector('.input').value=document.querySelector('.input').value.slice(0,-1);
+        });
+
+        document.querySelector('.clearAll').addEventListener('click', function(){
+            document.querySelector('.input').value=document.querySelector('.input').value.slice(0,-100000000000000000000000000000000);
+        });
+
+        document.querySelector('.answer').addEventListener('click', function(){
+            document.querySelector('.input').value= eval(document.querySelector('.input').value);
+
+        });
+        document.querySelector('.output').appendChild(document.querySelector('.input').value);
+        
+    
+    </script>
+</body>
+</html>
